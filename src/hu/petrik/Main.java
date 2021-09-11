@@ -62,9 +62,62 @@ public class Main {
             System.out.println("Hibás adat");
         }
     }
+
+    public static void hetesFeladat()
+    {
+        String[] honapok = {"Január", "Február", "Március", "Április", "Május", "Június", "Július", "Augusztus",
+                "Szeptember", "Október", "November", "December"};
+        int hanyadik;
+        System.out.print("Add meg hanyadik hónapot írunk: ");
+        hanyadik = sc.nextInt();
+        switch (hanyadik)
+        {
+            case 1:
+                System.out.println(honapok[hanyadik-1]);
+                break;
+            case 2:
+                System.out.println(honapok[hanyadik-1]);
+                break;
+            case 3:
+                System.out.println(honapok[hanyadik-1]);
+                break;
+            case 4:
+                System.out.println(honapok[hanyadik-1]);
+                break;
+            case 5:
+                System.out.println(honapok[hanyadik-1]);
+                break;
+            case 6:
+                System.out.println(honapok[hanyadik-1]);
+                break;
+            case 7:
+                System.out.println(honapok[hanyadik-1]);
+                break;
+            case 8:
+                System.out.println(honapok[hanyadik-1]);
+                break;
+            case 9:
+                System.out.println(honapok[hanyadik-1]);
+                break;
+            case 10:
+                System.out.println(honapok[hanyadik-1]);
+                break;
+            case 11:
+                System.out.println(honapok[hanyadik-1]);
+                break;
+            case 12:
+                System.out.println(honapok[hanyadik-1]);
+                break;
+            default:
+                System.out.println("Hibás adat!");
+                break;
+        }
+
+    }
     public static void main(String[] args) {
         otosFeladat();
         hatosFeladat();
+        hetesFeladat();
 
     }
 }
