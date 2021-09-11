@@ -199,6 +199,62 @@ public class Main {
         }
 
     }
+
+    public static void tizenkettesFeladat()
+    {
+        int ketszasasDb = 0;
+        int szazasDb = 0;
+        int otvenesDb = 0;
+        int huszasDb = 0;
+        int tizesDb = 0;
+        int otosDb = 0;
+        int[] ermek = {200, 100, 50, 20, 10, 5};
+        int osszeg;
+        System.out.print("1 és 1000Ft között adj meg egy összeget: ");
+        osszeg = sc.nextInt();
+        if (osszeg < 1)
+        {
+            System.out.printf("A %d kisebb mint 1...", osszeg);
+        }
+        else if (osszeg > 1000)
+        {
+            System.out.printf("A %d nagyobb mint 1000...", osszeg);
+        }
+        else
+        {
+            for (int erme : ermek) {
+                switch (erme)
+                {
+                    case 200:
+                        ketszasasDb = osszeg / erme;
+                        osszeg -= ketszasasDb * erme;
+                        break;
+                    case 100:
+                        szazasDb = osszeg / erme;
+                        osszeg -= szazasDb * erme;
+                        break;
+                    case 50:
+                        otvenesDb = osszeg / erme;
+                        osszeg -= otvenesDb * erme;
+                        break;
+                    case 20:
+                        huszasDb = osszeg / erme;
+                        osszeg -= huszasDb * erme;
+                        break;
+                    case 10:
+                        tizesDb = osszeg / erme;
+                        osszeg -= tizesDb * erme;
+                        break;
+                    case 5:
+                        otosDb = osszeg / erme;
+                        osszeg -= otosDb * erme;
+                        break;
+                }
+            }
+            System.out.printf("%ddb 200Ft\n%ddb 100Ft\n%ddb 50Ft\n%ddb 20Ft\n%ddb 10Ft\n%ddb 5Ft\nMaradék: %dFt"
+                    ,ketszasasDb, szazasDb, otvenesDb, huszasDb, tizesDb, otosDb, osszeg);
+        }
+    }
     public static void main(String[] args) {
         otosFeladat();
         hatosFeladat();
@@ -207,6 +263,7 @@ public class Main {
         kilencesFeladat();
         tizesFeladat();
         tizenegyesFeladat();
+        tizenkettesFeladat();
 
     }
 }
