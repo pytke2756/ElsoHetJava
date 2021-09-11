@@ -31,8 +31,40 @@ public class Main {
         }
     }
 
+    public static void hatosFeladat()
+    {
+        int pontszam;
+        boolean pontszamNagyobbMinusz;
+        System.out.print("Add meg a pontszámodat: ");
+        pontszam = sc.nextInt();
+        pontszamNagyobbMinusz = pontszam > -1;
+        if (pontszamNagyobbMinusz && pontszam < 43)
+        {
+            System.out.println("Elégtelen");
+        }
+        else if (pontszamNagyobbMinusz &&  pontszam < 58)
+        {
+            System.out.println("Elégséges");
+        }
+        else if (pontszamNagyobbMinusz && pontszam < 73)
+        {
+            System.out.println("Közepes");
+        }
+        else if (pontszamNagyobbMinusz && pontszam < 88)
+        {
+            System.out.println("Jó");
+        }
+        else if (pontszamNagyobbMinusz && pontszam < 101)
+        {
+            System.out.println("Jeles");
+        }
+        else{
+            System.out.println("Hibás adat");
+        }
+    }
     public static void main(String[] args) {
         otosFeladat();
+        hatosFeladat();
 
     }
 }
