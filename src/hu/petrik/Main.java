@@ -176,13 +176,37 @@ public class Main {
         }
         System.out.printf("A bekért számok közül %d volt páros és %d volt páratlan", paros, paratlan);
     }
+
+    public static void tizenegyesFeladat()
+    {
+        int szam;
+        int sum = 0;
+        System.out.print("Adj meg egy pozitív egész számot: ");
+        szam = sc.nextInt();
+        if (szam > 0)
+        {
+            for (int i = 0; i < szam; i++) {
+                if (i % 2 != 0 && i != 0){
+                    sum += i;
+                    //System.out.println(i);
+                }
+            }
+            System.out.printf("A(z) %d nem nagyobb pozitív páratlan számok összege: %d",szam, sum);
+        }
+        else
+        {
+            System.out.println("Ez nem pozitív egész szám!");
+        }
+
+    }
     public static void main(String[] args) {
-        //otosFeladat();
-        //hatosFeladat();
-        //hetesFeladat();
-        //nyolcasFeladat();
-        //kilencesFeladat();
+        otosFeladat();
+        hatosFeladat();
+        hetesFeladat();
+        nyolcasFeladat();
+        kilencesFeladat();
         tizesFeladat();
+        tizenegyesFeladat();
 
     }
 }
