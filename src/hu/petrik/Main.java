@@ -255,6 +255,29 @@ public class Main {
                     ,ketszasasDb, szazasDb, otvenesDb, huszasDb, tizesDb, otosDb, osszeg);
         }
     }
+
+    public static void tizenharmasFeladat()
+    {
+        int randomSzam = (int)(Math.random() * 100) + 1;
+        boolean talalt = false;
+        int tippelt;
+        //System.out.println(randomSzam);
+        while (!talalt)
+        {
+            System.out.print("Melyik számra gondoltam 1 és 100 között: ");
+            tippelt = sc.nextInt();
+            if (tippelt < randomSzam){
+                System.out.println("Nagyobb számra gondoltam.");
+            }
+            else if (tippelt > randomSzam){
+                System.out.println("Kisebb számra gondoltam.");
+            }
+            else{
+                System.out.println("Gratulálok eltaláltad.");
+                talalt = true;
+            }
+        }
+    }
     public static void main(String[] args) {
         otosFeladat();
         hatosFeladat();
@@ -264,6 +287,6 @@ public class Main {
         tizesFeladat();
         tizenegyesFeladat();
         tizenkettesFeladat();
-
+        tizenharmasFeladat();
     }
 }
