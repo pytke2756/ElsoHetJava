@@ -153,12 +153,36 @@ public class Main {
         }
         System.out.println();
     }
+
+    public static void tizesFeladat()
+    {
+        int sum = 0;
+        int bekert;
+        int paros = 0;
+        int paratlan = 0;
+        while (sum <= 100){
+            System.out.print("Adj meg egy számot: ");
+            bekert = sc.nextInt();
+            if (bekert % 2 == 0 && bekert != 0){
+                paros++;
+            }
+            else if(bekert % 2 != 0){
+                paratlan++;
+            }
+            else{
+                continue;
+            }
+            sum += bekert;
+        }
+        System.out.printf("A bekért számok közül %d volt páros és %d volt páratlan", paros, paratlan);
+    }
     public static void main(String[] args) {
         //otosFeladat();
         //hatosFeladat();
         //hetesFeladat();
         //nyolcasFeladat();
-        kilencesFeladat();
+        //kilencesFeladat();
+        tizesFeladat();
 
     }
 }
