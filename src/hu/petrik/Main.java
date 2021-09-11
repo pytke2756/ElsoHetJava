@@ -114,10 +114,40 @@ public class Main {
         }
 
     }
+
+    public static void nyolcasFeladat()
+    {
+        int tipp;
+        int fejVIras = (int)(Math.random() * 2);
+        System.out.println(fejVIras);
+        System.out.print("Add meg a tipped!\n0 : fej\t1 : írás\nA tipped: "); //a \t-t nem veszi figyelembe a konzol :(
+        tipp = sc.nextInt();
+
+        if (tipp == 0 || tipp == 1)
+        {
+            if (tipp == fejVIras)
+            {
+                System.out.println("Gratulálok eltaláltad!");
+            }
+            else
+            {
+                System.out.println("Sajnos nem nyert. :(");
+            }
+        }
+        else
+        {
+            System.out.println("Hibás adat!");
+        }
+
+
+
+    }
     public static void main(String[] args) {
         otosFeladat();
         hatosFeladat();
         hetesFeladat();
+        nyolcasFeladat();
+
 
     }
 }
