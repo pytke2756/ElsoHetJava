@@ -142,12 +142,23 @@ public class Main {
 
 
     }
-    public static void main(String[] args) {
-        otosFeladat();
-        hatosFeladat();
-        hetesFeladat();
-        nyolcasFeladat();
 
+    public static void kilencesFeladat()
+    {
+        for (int i = 0; i < 1000; i++) {
+            if (i % 3 == 0 && i % 5 == 0)
+            {
+                System.out.print(i + ", ");
+            }
+        }
+        System.out.println();
+    }
+    public static void main(String[] args) {
+        //otosFeladat();
+        //hatosFeladat();
+        //hetesFeladat();
+        //nyolcasFeladat();
+        kilencesFeladat();
 
     }
 }
