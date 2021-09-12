@@ -369,6 +369,23 @@ public class Main {
         System.out.println("A tömb " + hanyadik + ". eleme: " + egeszek[hanyadik - 1]);
 
     }
+
+    public static void tizenhetesFeladat()
+    {
+        double[] valos1 = {1.3434546, 3.656576, 5.6778678};
+        double[] valos2 = {1.5656, 3.234, 5.78853};
+        double[] osszegek = new double[3];
+
+        for (int i = 0; i < valos1.length; i++) {
+            osszegek[i] = valos1[i] + valos2[i];
+        }
+        for (double item:
+             osszegek) {
+            System.out.print(item + " ");
+        }
+        System.out.println();
+
+    }
     public static void main(String[] args) {
         otosFeladat();
         hatosFeladat();
@@ -382,5 +399,7 @@ public class Main {
         tizennegyesFeladat();
         tizenotosFeladat();
         tizenhatosFeladat();
+        tizenhetesFeladat();
+
     }
 }
