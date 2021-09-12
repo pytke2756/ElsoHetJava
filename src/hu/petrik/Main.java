@@ -331,6 +331,44 @@ public class Main {
             }
         }
     }
+
+    public static void tizenotosFeladat()
+    {
+
+    }
+
+    public static void tizenhatosFeladat()
+    {
+        int[] egeszek = new int[5];
+        int felhasznaloSzama;
+        for (int i = 0; i < egeszek.length; i++) {
+            System.out.printf("Még %ddb számot tudsz megadni: ", egeszek.length - i);
+            felhasznaloSzama = sc.nextInt();
+            egeszek[i] = felhasznaloSzama;
+        }
+        for (int i = 0; i < egeszek.length; i++) {
+            System.out.print(egeszek[i] + " ");
+        }
+        System.out.println();
+        for (int i = egeszek.length - 1; i > -1; i-- ){
+            System.out.print(egeszek[i] + " ");
+        }
+        System.out.println();
+        for (int i = 0; i < egeszek.length; i++){
+            if (i % 2 == 0){
+                System.out.print(egeszek[i] + " ");
+            }
+        }
+        System.out.println();
+        System.out.print("Adj meg egy számot 1-től 5-ig: ");
+        int hanyadik = sc.nextInt();
+        while(!(hanyadik < 5 && hanyadik > 1)){
+            System.out.print("Külső érték!\nPóbáld újra: ");
+            hanyadik = sc.nextInt();
+        }
+        System.out.println("A tömb " + hanyadik + ". eleme: " + egeszek[hanyadik - 1]);
+
+    }
     public static void main(String[] args) {
         otosFeladat();
         hatosFeladat();
@@ -342,5 +380,7 @@ public class Main {
         tizenkettesFeladat();
         tizenharmasFeladat();
         tizennegyesFeladat();
+        tizenotosFeladat();
+        tizenhatosFeladat();
     }
 }
