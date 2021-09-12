@@ -1,5 +1,7 @@
 package hu.petrik;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -386,8 +388,45 @@ public class Main {
         System.out.println();
 
     }
+
+    public static void tizennyolcasFeladat()
+    {
+        int felhasznaloSzam;
+        List<Integer> szamok = new ArrayList<>();
+
+
+        do {
+            System.out.print("Adj meg egy számot! Ha 0-t adsz meg végez a program: ");
+            felhasznaloSzam = sc.nextInt();
+            if (felhasznaloSzam != 0){
+                if (szamok.contains(felhasznaloSzam)){
+                    System.out.println("A megadott szám már szerepel a listában.");
+                    System.out.printf("A szám a %d. helyen szerepel.\n",szamok.indexOf(felhasznaloSzam) + 1);
+                }
+                else{
+                    int beszuras;
+                    System.out.print("Előlre vagy hátra akarod beszúni a számot?\n" +
+                            "0: előlre\t1: hátulra\n: ");
+                    beszuras = sc.nextInt();
+                    switch (beszuras){
+                        case 0:
+                            szamok.add(0, felhasznaloSzam);
+                            break;
+                        case 1:
+                            szamok.add(felhasznaloSzam);
+                            break;
+                        default:
+                            System.out.println("Ilyen opció nincs!");
+                    }
+                }
+            }
+        }while (felhasznaloSzam != 0);
+        for (int item: szamok) {
+            System.out.print(item + " ");
+        }
+    }
     public static void main(String[] args) {
-        otosFeladat();
+        /*otosFeladat();
         hatosFeladat();
         hetesFeladat();
         nyolcasFeladat();
@@ -399,7 +438,9 @@ public class Main {
         tizennegyesFeladat();
         tizenotosFeladat();
         tizenhatosFeladat();
-        tizenhetesFeladat();
+        tizenhetesFeladat();*/
+        tizennyolcasFeladat();
+
 
     }
 }
