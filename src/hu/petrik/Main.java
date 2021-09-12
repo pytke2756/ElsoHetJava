@@ -278,6 +278,59 @@ public class Main {
             }
         }
     }
+
+    public static void  tizennegyesFeladat()
+    {
+        String felhasznaloString;
+        boolean kilepes = false;
+        char menu;
+        System.out.print("Adj meg egy stringet: ");
+        felhasznaloString = sc.nextLine();
+
+        while (!kilepes){
+            System.out.print("a: Nagybetűssé alakítás\nb: Kisbetűssé alakítás\nc: Hossz lekérdezés\n" +
+                    "d: Összehasonlítás egy másik stringgel\ne: Egy rész kiiratás\nf: Kilépés\n: ");
+            menu = sc.next().charAt(0);
+            switch (menu){
+                case 'a':
+                    System.out.println(felhasznaloString.toUpperCase());
+                    break;
+                case 'b':
+                    System.out.println(felhasznaloString.toLowerCase());
+                    break;
+                case 'c':
+                    System.out.println(felhasznaloString.length());
+                    break;
+                case 'd':
+                    //Itt nem értem mit kéne összehasonlítani :(
+                    break;
+                case 'e':
+                    int kezdet, veg;
+                    System.out.print("Hanyadik karaktertől írjam ki: ");
+                    kezdet = sc.nextInt();
+                    while (kezdet - 1 > felhasznaloString.length() || kezdet < 1){
+                        System.out.print("Hibás adat!\nAdd meg újra: ");
+                        kezdet = sc.nextInt();
+                    }
+                    System.out.print("Hanyadik karakterig írjam ki: ");
+                    veg = sc.nextInt();
+                    while (veg - 1 > felhasznaloString.length() || veg < 1 || veg < kezdet){
+                        System.out.print("Hibás adat!\nAdd meg újra: ");
+                        veg = sc.nextInt();
+                    }
+                    for (int i = kezdet; i <= veg; i++) {
+                        System.out.print(felhasznaloString.charAt(i - 1));
+                    }
+                    System.out.println();
+                    break;
+                case 'f':
+                    kilepes = true;
+                    break;
+                default:
+                    System.out.println("Nincs ilyen lehetőség!");
+            }
+        }
+    }
     public static void main(String[] args) {
         otosFeladat();
         hatosFeladat();
@@ -288,5 +341,6 @@ public class Main {
         tizenegyesFeladat();
         tizenkettesFeladat();
         tizenharmasFeladat();
+        tizennegyesFeladat();
     }
 }
