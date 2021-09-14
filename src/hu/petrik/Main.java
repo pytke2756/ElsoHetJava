@@ -7,6 +7,66 @@ import java.util.Scanner;
 public class Main {
     public static Scanner sc = new Scanner(System.in);
 
+    public static void egyesFeladat()
+    {
+        int atmero, melyseg;
+        System.out.print("Add meg a medence átmérőjét: ");
+        atmero = sc.nextInt();
+        System.out.printf("Add meg a medence mélységét: ");
+        melyseg = sc.nextInt();
+
+        double terulet = (Math.PI * Math.pow((double)atmero, 2)) / 4;
+
+        System.out.printf("A medencébe %f kömbéter víz fér belle.", terulet * melyseg);
+
+    }
+
+    public static void kettesFeladat()
+    { //ez fixen nem jó
+        int csempeNm = ((20 * 20) / 100) / 100;
+        int szelesseg, magassag;
+        System.out.print("Add meg a terület szélességét: ");
+        szelesseg = sc.nextInt();
+        System.out.print("Add meg a magasságát: ");
+        magassag = sc.nextInt();
+
+        double terulet = szelesseg * magassag;
+
+        System.out.printf("%d db csempe kell.", (int)Math.ceil((terulet / csempeNm) * 0.1));
+
+    }
+
+    private static void harmasFeladat()
+    {
+        double szam;
+        System.out.print("Adj meg egy pozitív valós számot: ");
+        szam = sc.nextDouble();
+
+        System.out.printf("A megadott szám a %d és a %d egész számok között van, és ezek közül a %d számhoz van közelebb.\n" +
+                        "A szám egész része: %d\n" +
+                        "A szám törtrésze: %f", (int)Math.floor(szam), (int)Math.ceil(szam), Math.round(szam),
+                (int)Math.floor(szam), szam - Math.floor(szam));
+    }
+
+    private static void negyesFeladat()
+    {
+        int a,b,c;
+        System.out.print("Add meg a háromszög 'a' oldalát: ");
+        a = sc.nextInt();
+        System.out.print("Add meg a háromszög 'b' oldalát: ");
+        b = sc.nextInt();
+        System.out.print("Add meg a háromszög 'c' oldalát: ");
+        c = sc.nextInt();
+
+        if (a + b > c || a + c > b || b + c > a){
+            System.out.println("A háromszög kerülete: "+ (a + b + c));
+        }
+        else{
+            System.out.println("Hibás adatok!");
+        }
+    }
+
+
     public static void otosFeladat()
     {
         int a, b;
@@ -426,7 +486,11 @@ public class Main {
         }
     }
     public static void main(String[] args) {
-        /*otosFeladat();
+        egyesFeladat();
+        kettesFeladat();
+        harmasFeladat();
+        negyesFeladat();
+        otosFeladat();
         hatosFeladat();
         hetesFeladat();
         nyolcasFeladat();
@@ -438,7 +502,7 @@ public class Main {
         tizennegyesFeladat();
         tizenotosFeladat();
         tizenhatosFeladat();
-        tizenhetesFeladat();*/
+        tizenhetesFeladat();
         tizennyolcasFeladat();
 
 
