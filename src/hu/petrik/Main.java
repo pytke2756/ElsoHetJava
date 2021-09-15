@@ -23,7 +23,7 @@ public class Main {
     }
 
     public static void kettesFeladat()
-    { //ez fixen nem jó
+    {
         int csempeNm = ((20 * 20) / 100) / 100;
         int szelesseg, magassag;
         System.out.print("Add meg a terület szélességét: ");
@@ -135,41 +135,17 @@ public class Main {
         hanyadik = sc.nextInt();
         switch (hanyadik)
         {
-            case 1:
+            case 1: case 2: case 12:
                 System.out.println("Tél");
                 break;
-            case 2:
-                System.out.println("Tél");
-                break;
-            case 3:
+            case 3: case 4: case 5:
                 System.out.println("Tavasz");
                 break;
-            case 4:
-                System.out.println("Tavasz");
-                break;
-            case 5:
-                System.out.println("Tavasz");
-                break;
-            case 6:
+            case 6: case 7: case 8:
                 System.out.println("Nyár");
                 break;
-            case 7:
-                System.out.println("Nyár");
-                break;
-            case 8:
-                System.out.println("Nyár");
-                break;
-            case 9:
+            case 9: case 10: case 11:
                 System.out.println("Ősz");
-                break;
-            case 10:
-                System.out.println("Ősz");
-                break;
-            case 11:
-                System.out.println("Ősz");
-                break;
-            case 12:
-                System.out.println("Tél");
                 break;
             default:
                 System.out.println("Hibás adat!");
@@ -182,7 +158,7 @@ public class Main {
     {
         int tipp;
         int fejVIras = (int)(Math.random() * 2);
-        System.out.println(fejVIras);
+        //System.out.println(fejVIras);
         System.out.print("Add meg a tipped!\n0 : fej\t1 : írás\nA tipped: "); //a \t-t nem veszi figyelembe a konzol :(
         tipp = sc.nextInt();
 
@@ -463,12 +439,12 @@ public class Main {
         }
     }
     public static void main(String[] args) {
-        egyesFeladat();
+        /*egyesFeladat();
         kettesFeladat();
         harmasFeladat();
         negyesFeladat();
         otosFeladat();
-        hatosFeladat();
+        hatosFeladat();*/
         hetesFeladat();
         nyolcasFeladat();
         kilencesFeladat();
