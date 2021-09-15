@@ -128,8 +128,6 @@ public class Main {
 
     public static void hetesFeladat()
     {
-        String[] honapok = {"Január", "Február", "Március", "Április", "Május", "Június", "Július", "Augusztus",
-                "Szeptember", "Október", "November", "December"};
         int hanyadik;
         System.out.print("Add meg hanyadik hónapot írunk: ");
         hanyadik = sc.nextInt();
