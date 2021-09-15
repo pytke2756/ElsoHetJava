@@ -2,6 +2,7 @@ package hu.petrik;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -32,7 +33,7 @@ public class Main {
 
         double terulet = szelesseg * magassag;
 
-        System.out.printf("%d db csempe kell.", (int)Math.ceil((terulet / csempeNm) * 0.1));
+        System.out.printf("%d db csempe kell.", (int)Math.ceil((terulet / csempeNm) * 1.1));
 
     }
 
@@ -58,7 +59,7 @@ public class Main {
         System.out.print("Add meg a háromszög 'c' oldalát: ");
         c = sc.nextInt();
 
-        if (a + b > c || a + c > b || b + c > a){
+        if (a + b > c && a + c > b && b + c > a){
             System.out.println("A háromszög kerülete: "+ (a + b + c));
         }
         else{
@@ -135,40 +136,40 @@ public class Main {
         switch (hanyadik)
         {
             case 1:
-                System.out.println(honapok[hanyadik-1]);
+                System.out.println("Tél");
                 break;
             case 2:
-                System.out.println(honapok[hanyadik-1]);
+                System.out.println("Tél");
                 break;
             case 3:
-                System.out.println(honapok[hanyadik-1]);
+                System.out.println("Tavasz");
                 break;
             case 4:
-                System.out.println(honapok[hanyadik-1]);
+                System.out.println("Tavasz");
                 break;
             case 5:
-                System.out.println(honapok[hanyadik-1]);
+                System.out.println("Tavasz");
                 break;
             case 6:
-                System.out.println(honapok[hanyadik-1]);
+                System.out.println("Nyár");
                 break;
             case 7:
-                System.out.println(honapok[hanyadik-1]);
+                System.out.println("Nyár");
                 break;
             case 8:
-                System.out.println(honapok[hanyadik-1]);
+                System.out.println("Nyár");
                 break;
             case 9:
-                System.out.println(honapok[hanyadik-1]);
+                System.out.println("Ősz");
                 break;
             case 10:
-                System.out.println(honapok[hanyadik-1]);
+                System.out.println("Ősz");
                 break;
             case 11:
-                System.out.println(honapok[hanyadik-1]);
+                System.out.println("Ősz");
                 break;
             case 12:
-                System.out.println(honapok[hanyadik-1]);
+                System.out.println("Tél");
                 break;
             default:
                 System.out.println("Hibás adat!");
@@ -200,9 +201,6 @@ public class Main {
         {
             System.out.println("Hibás adat!");
         }
-
-
-
     }
 
     public static void kilencesFeladat()
@@ -231,9 +229,6 @@ public class Main {
             else if(bekert % 2 != 0){
                 paratlan++;
             }
-            else{
-                continue;
-            }
             sum += bekert;
         }
         System.out.printf("A bekért számok közül %d volt páros és %d volt páratlan", paros, paratlan);
@@ -247,8 +242,8 @@ public class Main {
         szam = sc.nextInt();
         if (szam > 0)
         {
-            for (int i = 0; i < szam; i++) {
-                if (i % 2 != 0 && i != 0){
+            for (int i = 0; i <= szam; i++) {
+                if (i % 2 != 0){
                     sum += i;
                     //System.out.println(i);
                 }
@@ -264,12 +259,7 @@ public class Main {
 
     public static void tizenkettesFeladat()
     {
-        int ketszasasDb = 0;
-        int szazasDb = 0;
-        int otvenesDb = 0;
-        int huszasDb = 0;
-        int tizesDb = 0;
-        int otosDb = 0;
+        int[] ermekDb = new int[6];
         int[] ermek = {200, 100, 50, 20, 10, 5};
         int osszeg;
         System.out.print("1 és 1000Ft között adj meg egy összeget: ");
@@ -282,39 +272,17 @@ public class Main {
         {
             System.out.printf("A %d nagyobb mint 1000...", osszeg);
         }
-        else
-        {
-            for (int erme : ermek) {
-                switch (erme)
-                {
-                    case 200:
-                        ketszasasDb = osszeg / erme;
-                        osszeg -= ketszasasDb * erme;
-                        break;
-                    case 100:
-                        szazasDb = osszeg / erme;
-                        osszeg -= szazasDb * erme;
-                        break;
-                    case 50:
-                        otvenesDb = osszeg / erme;
-                        osszeg -= otvenesDb * erme;
-                        break;
-                    case 20:
-                        huszasDb = osszeg / erme;
-                        osszeg -= huszasDb * erme;
-                        break;
-                    case 10:
-                        tizesDb = osszeg / erme;
-                        osszeg -= tizesDb * erme;
-                        break;
-                    case 5:
-                        otosDb = osszeg / erme;
-                        osszeg -= otosDb * erme;
-                        break;
-                }
+        else {
+            for (int i = 0; i < ermekDb.length; i++) {
+                ermekDb[i] = osszeg / ermek[i];
+                osszeg -= ermekDb[i] * ermek[i];
             }
-            System.out.printf("%ddb 200Ft\n%ddb 100Ft\n%ddb 50Ft\n%ddb 20Ft\n%ddb 10Ft\n%ddb 5Ft\nMaradék: %dFt"
-                    ,ketszasasDb, szazasDb, otvenesDb, huszasDb, tizesDb, otosDb, osszeg);
+
+            for (int i = 0; i < ermekDb.length; i++) {
+                System.out.printf("%ddb %dFt\n", ermekDb[i], ermek[i]);
+            }
+            System.out.printf("Maradék: %dFt\n", osszeg);
+
         }
     }
 
@@ -364,7 +332,16 @@ public class Main {
                     System.out.println(felhasznaloString.length());
                     break;
                 case 'd':
-                    //Itt nem értem mit kéne összehasonlítani :(
+                    String masik;
+                    System.out.print("Adj meg egy másik stringet amivel összehasonlítom: ");
+                    masik = sc.next();
+
+                    if (felhasznaloString.toLowerCase().compareTo(masik.toLowerCase()) == 0){
+                        System.out.println("A kettő string ugyan azt tartalmazza.");
+                    }
+                    else{
+                        System.out.println("A kettő string nem ugyan az.");
+                    }
                     break;
                 case 'e':
                     int kezdet, veg;
@@ -417,7 +394,7 @@ public class Main {
         }
         System.out.println();
         for (int i = 0; i < egeszek.length; i++){
-            if (i % 2 == 0){
+            if (i % 2 != 0){
                 System.out.print(egeszek[i] + " ");
             }
         }
